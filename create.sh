@@ -32,6 +32,14 @@ nmcli connection delete ubutntuWifiCreator
 nmcli dev wifi hotspot ifname $1 con-name "ubutntuWifiCreator" ssid $2 password "$3" --show-secrets
 
 echo "Network Created - ubutntuWifiCreator"
-echo "Connection attempt start"
 
+echo "Changing network mode from AP to Infrastructure"
+nmcli connection edit ubutntuWifiCreator
+set 802-11-wireless.mode infrastructure
+q
+echo "Configuration done"
+
+echo "Connection attempt start"
 nmcli c up ubutntuWifiCreator
+
+exit 0
