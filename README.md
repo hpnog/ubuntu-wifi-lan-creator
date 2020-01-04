@@ -27,7 +27,13 @@ It has only been testes in a very small number of machines so, if you find any p
  python3 creatorApp.py -create
  ```
 
- * To **remove** a network:
+ 2. To **remove** a network:
  ```shell
  python3 creatorApp.py -remove
+ ```
+
+ **NOTE:** If after creating the Network it does not work properly, try restarting the __network_manager__:
+
+ ```shell
+ service network-manager restart
  ```
