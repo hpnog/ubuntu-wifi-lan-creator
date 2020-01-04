@@ -34,4 +34,4 @@ nmcli dev wifi hotspot ifname $1 con-name "ubutntuWifiCreator" ssid $2 password 
 echo "Network Created - ubutntuWifiCreator"
 echo "Connection attempt start"
 
-nmcli c up ubutntuWifiCreator$(date +"%F")
+nmcli c up ubutntuWifiCreator
