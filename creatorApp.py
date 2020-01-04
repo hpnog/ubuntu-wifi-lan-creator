@@ -7,7 +7,7 @@ def main():
 
     checkAdapterProperties = subprocess.run(["iw", "list"], stdout=subprocess.PIPE)
     checkAdapterPropertiesOut = str(checkAdapterProperties.stdout)
-    hasAPCapabilities = checkAdapterPropertiesOut.find("* AP\n")
+    hasAPCapabilities = checkAdapterPropertiesOut.find("* AP\\n")
     
     print(hasAPCapabilities)
 
