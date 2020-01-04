@@ -23,6 +23,7 @@ def getWifiDevice() -> str:
     # Get adapter information
     getAdapters = subprocess.run(["nmcli", "d"], stdout=subprocess.PIPE)
 
+    # Returns a table with the first line being the header
     getAdaptersOut = str(getAdapters.stdout).split("\\n")
     for line in getAdaptersOut:
         if line.find("wifi") != -1:
@@ -98,12 +99,14 @@ def main(argv):
 
     addScriptsPermissions()
 
+    # Handle user arguments
     if argv[0] == "-create":
         res = createNetwork()
     elif argv[0] == "-remove":
         string = removeNetworkIfExistant().split("\\n")
         for line in string:
             print("Script stdout:" + line)
+    
     if res == 0:
         print("Ended successfuly")
     else:
