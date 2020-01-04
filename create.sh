@@ -34,8 +34,6 @@ nmcli dev wifi hotspot ifname $1 con-name "ubuntuWifiCreator" ssid $2 password "
 echo "Network Created - ubuntuWifiCreator"
 
 echo "Changing network mode to ap"
-#nmcli connection edit ubuntuWifiCreator
-#802-11-wireless.mode ap
 nmcli connection modify ubuntuWifiCreator 802-11-wireless.mode ap
 echo "Configuration done"
 
