@@ -6,7 +6,6 @@ def addScriptsPermissions():
     subprocess.run(["chmod", "+x", "./shScripts/create.sh"])
     subprocess.run(["chmod", "+x", "./shScripts/disconnectAndRemove.sh"])
     print("Script Permissions set")
-
     return
 
 def hasAPCapabilities() -> bool:
@@ -39,7 +38,6 @@ def requestUserInput() -> {}:
     print("Please enter a valid password for your Network:")
     pw = input()
     res["password"] = pw
-
     return res
 
 def removeNetworkIfExistant() -> str:
@@ -58,7 +56,8 @@ def attemptConnection():
         print("Canceling and removing network")
         removeNetworkIfExistant()
         return -1
-
+    return 0
+    
 def createNetwork() -> int:
     res = 0
     if not hasAPCapabilities():
