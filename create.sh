@@ -9,19 +9,6 @@ if [ $# != 3 ]
         echo "Arguments received"
 fi
 
-# Make sure that the wifi radio is on
-nmcli r wifi on
-
-# Determine the name if the network interface
-nmcli d
-
-# Determine the name if the Wifi network interface
-nmcli d wifi list
-
-# The following command would connect to <networkName> using <password>
-# nmcli d wifi connect <networkName> password <password>
-
-
 # wifi hotspot [ifname ifname] [con-name name] [ssid SSID] [band {a | bg}] [channel channel] [password password]
 
 # Wifi Hotspot 
@@ -39,9 +26,9 @@ nmcli d wifi list
 # password
 #  password to use for the created hotspot. The password is either WPA pre-shared key or WEP key
 
-nmcli dev wifi hotspot ifname $1 con-name "ubutntuWifiCreator$(date +"%F")" ssid $2 password "$3"
+nmcli dev wifi hotspot ifname $1 con-name "ubutntuWifiCreator" ssid $2 password "$3" --show-secrets
 
-echo "Network Created"
+echo "Network Created - ubutntuWifiCreator"
 echo "Connection attempt start"
 
 nmcli c up ubutntuWifiCreator$(date +"%F")
