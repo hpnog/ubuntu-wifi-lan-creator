@@ -11,9 +11,6 @@ if [ $# != 3 ]
         echo "Arguments received"
 fi
 
-echo "Removing ubuntuWifiCreator connection (if any exists)"
-nmcli connection delete ubuntuWifiCreator
-
 # wifi hotspot [ifname ifname] [con-name name] [ssid SSID] [band {a | bg}] [channel channel] [password password]
 
 # Wifi Hotspot 
