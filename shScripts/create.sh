@@ -1,5 +1,7 @@
 #!/bin/sh
 
+echo "Starting Create script"
+
 if [ $# != 3 ]
     then
         echo "No correct arguments supplied..."
@@ -36,8 +38,5 @@ echo "Network Created - ubuntuWifiCreator"
 echo "Changing network mode to ap"
 nmcli connection modify ubuntuWifiCreator 802-11-wireless.mode ap
 echo "Configuration done"
-
-echo "Connection attempt start"
-nmcli c up ubuntuWifiCreator
 
 exit 0
