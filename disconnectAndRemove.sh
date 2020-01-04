@@ -1,7 +1,7 @@
 #!/bin/sh
 
-echo "Disconnecting from Hospot ubutntuWifiCreator connection"
-nmcli c down ubutntuWifiCreator
+echo "Disconnecting from Hospot ubuntuWifiCreator connection"
+nmcli c down ubuntuWifiCreator
 
-echo "Removing ubutntuWifiCreator connection"
-nmcli connection delete ubutntuWifiCreator
+echo "Removing ubuntuWifiCreator connection"
+nmcli connection delete ubuntuWifiCreator

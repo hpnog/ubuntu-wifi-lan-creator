@@ -9,8 +9,8 @@ if [ $# != 3 ]
         echo "Arguments received"
 fi
 
-echo "Removing ubutntuWifiCreator connection (if any exists)"
-nmcli connection delete ubutntuWifiCreator
+echo "Removing ubuntuWifiCreator connection (if any exists)"
+nmcli connection delete ubuntuWifiCreator
 
 # wifi hotspot [ifname ifname] [con-name name] [ssid SSID] [band {a | bg}] [channel channel] [password password]
 
@@ -29,17 +29,17 @@ nmcli connection delete ubutntuWifiCreator
 # password
 #  password to use for the created hotspot. The password is either WPA pre-shared key or WEP key
 
-nmcli dev wifi hotspot ifname $1 con-name "ubutntuWifiCreator" ssid $2 password "$3" --show-secrets
+nmcli dev wifi hotspot ifname $1 con-name "ubuntuWifiCreator" ssid $2 password "$3" --show-secrets
 
-echo "Network Created - ubutntuWifiCreator"
+echo "Network Created - ubuntuWifiCreator"
 
-echo "Changing network mode from AP to Infrastructure"
-nmcli connection edit ubutntuWifiCreator
-set 802-11-wireless.mode infrastructure
-q
+echo "Changing network mode to ap"
+#nmcli connection edit ubuntuWifiCreator
+#802-11-wireless.mode ap
+nmcli connection modify ubuntuWifiCreator 802-11-wireless.mode ap
 echo "Configuration done"
 
 echo "Connection attempt start"
-nmcli c up ubutntuWifiCreator
+nmcli c up ubuntuWifiCreator
 
 exit 0
