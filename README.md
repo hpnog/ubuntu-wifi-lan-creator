@@ -1,4 +1,4 @@
-# Ubuntu Wifi Lan Creater
+# Ubuntu Wifi Lan Creator
 
 ## Summary
 
